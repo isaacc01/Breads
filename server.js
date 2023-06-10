@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const express = require('express')
 const app = express()
-const methodOverride = require('methodOverride')
+const methodOverride = require('method-override')
 
 // CONFIGURATION
 require('dotenv').config()
