@@ -1,28 +1,27 @@
-const React = require('react')
-const Default = require('./layout/default')
+const React = require("react");
+const Default = require("./layout/default");
 
-function Show ({ bread, index }) {
-  // Confirm we are getting our bread data in the terminal.
-//console.log(bread.name)
+function Show({ bread, id }) {
+  // console.log(bread.name)
   return (
-      <Default>
+    <Default>
       <h3>{bread.name}</h3>
       <p>
         and it
-        {
-          bread.hasGluten
-          ? <span> does </span>
-          : <span> does NOT </span>
-        }
+        {bread.hasGluten ? <span> does </span> : <span> does NOT </span>}
         have gluten.
       </p>
       <img src={bread.image} alt={bread.name} />
-      <li><a href="/breads">Go home</a></li>
-      <form action={`/breads/${index}?_method=DELETE`} method="POST">
-        <input type='submit' value="DELETE"/>
+      {/* <p>Baked by {bread.baker}</p> */}
+      <p>{bread.getBakedBy()}</p>
+      <li>
+        <a href="/breads">Go home</a>
+      </li>
+    <form action={`/breads/${bread.id}?_method=DELETE`} method="POST">
+      <input type="submit" value="DELETE"/>
     </form>
-    <br/> <a href={`/breads/${index}/edit`}><button>Edit</button></a>
-    </Default> 
+    <br/> <a href={`/breads/${bread.id}/edit`}><button>Edit</button></a>
+    </Default>
   );
 }
 
