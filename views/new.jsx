@@ -34,7 +34,6 @@ function New({bakers}) {
   );
 }
 
-//MONGO_URI=mongodb+srv://isaacalejandro07:c7bwW9t5g9fEcsGh@rest-rant.udjfoge.mongodb.net/
-//MONGO_PASS=c7bwW9t5g9fEcsGh
+
 
 module.exports = New;
